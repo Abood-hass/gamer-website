@@ -1,0 +1,31 @@
+.orLineContainer {
+  position: relative;
+  width: 426px;
+  height: 10px;
+  align-self: center;
+  padding: auto;
+  text-align: center;
+  margin-top: -20px;
+  margin-bottom: -50px;
+}
+.orLineContainer > * {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+}
+.orLineContainer > span {
+  font-size: 12px;
+  margin: auto;
+  color: #bababa;
+  width: 100px;
+  background-color: #e5e5e5;
+}
+.orLineContainer > hr {
+  margin: auto;
+  border: none;
+  height: 1px;
+  width: inherit;
+  background-color: #bababa;
+}

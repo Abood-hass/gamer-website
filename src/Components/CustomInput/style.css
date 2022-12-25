@@ -1,0 +1,67 @@
+.CustomInputConatiner {
+  position: relative;
+  width: 426px;
+  height: 64px;
+  align-self: center;
+}
+
+.CustomInputConatiner > * {
+  float: left;
+  padding-bottom: 10px;
+}
+
+.CustomInputLabel {
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 500;
+  color: #696f79;
+}
+.CustomInputConatiner > div {
+  width: inherit;
+}
+
+.CustomInputConatiner > input {
+  outline: none;
+  border-radius: 6px;
+  border: 1px solid #8692a6;
+  font-weight: 700;
+  width: inherit;
+  height: inherit;
+  box-sizing: border-box;
+  padding: 0px 20px;
+  font-size: 14px;
+}
+
+.CustomInputConatiner > div > hr {
+  border-radius: 50px;
+  margin-bottom: 0px;
+  border: none;
+  width: inherit;
+  height: 2px;
+}
+
+.CustomInputConatiner > div > span {
+  color: #ffc107;
+  font-size: 12px;
+  float: left;
+}
+.material-symbols-outlined {
+  cursor: pointer;
+  position: absolute;
+  top: 80%;
+  right: 5%;
+  width: 30px;
+  height: 24px;
+  color: #8692a6;
+  font-weight: 500;
+  user-select: none;
+  transition: all 200ms;
+}
+.material-symbols-outlined:hover {
+  color: #696f79;
+}
+@media screen and (min-width < 580px) {
+  .CustomInputConatiner {
+    width: 100%;
+  }
+}

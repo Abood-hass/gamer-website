@@ -1,0 +1,175 @@
+.RegisterSection {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+}
+.RegisterSectionLeft {
+  position: relative;
+  height: 100vh;
+}
+
+.iconPart1,
+.iconPart2 {
+  margin: auto;
+  transform: rotate(0deg);
+  height: fit-content;
+  height: 30px;
+  width: 30px;
+}
+
+.iconPart2 {
+  position: absolute;
+  transform: rotate(20deg);
+  bottom: 15%;
+  left: 15%;
+}
+.iconHeader {
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  width: 100px;
+}
+.iconHeader > h4 {
+  margin-top: 20px;
+}
+
+#secondPageHeader {
+  display: none;
+}
+
+.gamerImage {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  object-fit: cover;
+  left: 0%;
+  top: 0%;
+  object-position: 0% 80%;
+}
+.RegisterSectionLeftBody {
+  color: #ffffff;
+  box-sizing: border-box;
+  padding: 50px 80px;
+  padding-bottom: 100px;
+  text-align: left;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  background-color: #1565d8d5;
+  height: 100vh;
+  width: 700px;
+}
+
+.RegisterSectionLeftBody > span {
+  font-family: Gayathri;
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 117px;
+  letter-spacing: 0em;
+  text-align: left;
+  margin-bottom: -10%;
+}
+.RegisterSectionLeftBody > p {
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 38px;
+  letter-spacing: 0em;
+  text-align: left;
+  width: 90%;
+}
+
+.RegisterSectionLeftBody > p:nth-of-type(3) {
+  text-align: right;
+}
+.RegisterSectionRight {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.RegisterSectionRight > form {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.backButton {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #8692a6;
+  user-select: none;
+  cursor: pointer;
+  left: 5%;
+  top: 2%;
+  position: absolute;
+}
+
+@media screen and (max-height: 700px) {
+  .RegisterSectionLeft {
+    height: 150vh;
+  }
+  .gamerImage {
+    height: 150vh;
+  }
+  .RegisterSectionLeft > * {
+    height: 150vh;
+  }
+  .RegisterSectionRight {
+    display: flex;
+    align-items: center;
+    height: 150vh;
+  }
+}
+@media screen and (max-width: 1550px) {
+  .gamerImage {
+    width: 100%;
+  }
+  .RegisterSectionLeft > * {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .RegisterSectionLeft {
+    display: none;
+  }
+  #secondPageHeader {
+    display: flex;
+  }
+
+  .RegisterSection {
+    height: 150vh;
+  }
+  .RegisterSectionRight {
+    display: flex;
+    align-items: center;
+    height: 150vh;
+  }
+  .RegisterSection {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+  .RegisterSectionRight > form {
+    align-self: center;
+    width: 650px;
+    margin: auto;
+  }
+
+  .ScrollToLoginButton {
+    display: none;
+  }
+  .iconHeader {
+    align-self: center;
+  }
+}

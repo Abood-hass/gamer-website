@@ -1,0 +1,164 @@
+.LoginScreen {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  width: 96%;
+  text-align: left;
+  height: 100vh;
+  margin: auto;
+}
+.iconPart1Login,
+.iconPart2Login {
+  margin: auto;
+  transform: rotate(90deg);
+  height: fit-content;
+}
+
+.iconPart2Login {
+  position: absolute;
+  transform: rotate(110deg);
+  left: 2%;
+  top: 40%;
+}
+.iconHeaderLogin {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+}
+.LoginScreenLeft {
+  margin: auto;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.LoginScreenRight {
+  margin: auto;
+  height: 90vh;
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.LoginScreenRight > form {
+  display: flex;
+  height: 70%;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.PageHeader {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-family: "Righteous";
+  color: #1565d8;
+  font-size: 72px;
+  height: fit-content;
+}
+
+.LoverText {
+  font-family: Inter;
+  width: 473px;
+  font-size: 20px;
+  color: #696f79;
+  font-style: italic;
+  line-height: 35px;
+}
+
+.LoverName {
+  font-family: Inter;
+  width: fit-content;
+  font-size: 20px;
+  align-self: flex-start;
+  color: #696f79;
+}
+.LoginScreenLeft > div:nth-of-type(2) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+
+.OldController {
+  width: 336px;
+  height: 418px;
+  float: right;
+  object-fit: cover;
+}
+
+.RegisterOpotion {
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #696f79;
+  margin-top: -50px;
+}
+.RegisterOpotion > span {
+  cursor: pointer;
+  color: #1565d8;
+}
+.ScrollToLoginButton {
+  display: none;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  left: 5%;
+  bottom: 6%;
+  height: 50px;
+  width: 100px;
+  background-color: #1565d8;
+  border-radius: 10px;
+  font-family: Inter;
+  color: white;
+}
+
+@media screen and (max-width: 1000px) {
+  .LoginScreen {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+    height: 200vh;
+  }
+
+  .ScrollToLoginButton {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .LoginScreenLeft {
+    height: fit-content;
+  }
+  .LoginScreenLeft > div:nth-of-type(2),
+  .LoverText {
+    display: none;
+  }
+  .PageHeader {
+    align-self: center;
+    margin: 10px 0px;
+  }
+  .LoginScreen {
+    padding: 0px;
+    background-position: 50%;
+    margin-left: -13px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+    height: 100vh;
+  }
+
+  .ScrollToLoginButton {
+    display: none;
+  }
+  .iconHeader {
+    align-self: center;
+  }
+}

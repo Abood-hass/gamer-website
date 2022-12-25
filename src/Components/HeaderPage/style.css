@@ -1,0 +1,18 @@
+.headerContainer {
+  width: 415px;
+  height: 90px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.headerContainer > h1 {
+  font-size: 30px;
+  font-weight: 700;
+  font-family: Inter;
+}
+
+.headerContainer > span {
+  font-size: 18px;
+  color: #8692a6;
+  font-family: "Inter";
+}
