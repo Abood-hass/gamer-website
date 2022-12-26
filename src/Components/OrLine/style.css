@@ -5,8 +5,6 @@
   align-self: center;
   padding: auto;
   text-align: center;
-  margin-top: -20px;
-  margin-bottom: -50px;
 }
 .orLineContainer > * {
   position: absolute;
@@ -23,7 +21,6 @@
   background-color: #e5e5e5;
 }
 .orLineContainer > hr {
-  margin: auto;
   border: none;
   height: 1px;
   width: inherit;

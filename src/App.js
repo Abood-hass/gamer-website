@@ -7,8 +7,8 @@ import { Component } from 'react';
 export default class App extends Component {
 
   state = {
-    aciveLoginSection: false,
-    aciveRegisterSection: true
+    aciveLoginSection: true,
+    aciveRegisterSection: false
   }
 
   changeActive = () => {

@@ -47,7 +47,7 @@
 
 .LoginScreenRight > form {
   display: flex;
-  height: 70%;
+  height: 56%;
   flex-direction: column;
   justify-content: space-around;
 }
@@ -97,7 +97,6 @@
   letter-spacing: 0em;
   text-align: left;
   color: #696f79;
-  margin-top: -50px;
 }
 .RegisterOpotion > span {
   cursor: pointer;

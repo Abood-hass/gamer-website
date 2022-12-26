@@ -83,11 +83,39 @@ export default class index extends Component {
                     <p className='backButton' onClick={this.props.changeActive}>&#x2039;  Back</p>
                     <HeaderPage secondaryHeader={'For the purpose of gamers regulation, your details are required.'} mainHeader={'Register Individual Account!'} />
                     <form>
-                        <CustomInput onChangeState={(state) => this.onChangeEmailState(state)} onChange={this.onChangeEmail} value={this.state.userEmail} label={"Email address"} required bestValueLength={50} minValueLength={20} />
-                        <CustomInput onChangeState={(state) => this.onChangePasswordState(state)} onChange={this.onChangePassword} value={this.state.userPassword} label={"Create Password"} bestValueLength={20} minValueLength={10} required type={'password'} alwaysHideMetter={false} hideLine={false} />
                         <CustomInput
-                            onChange={this.onChangePasswordConfirm} value={this.state.userPasswordConfirm}
-                            label={"Repeat password"} bestValueLength={20} minValueLength={10} required type={'password'} alwaysHideMetter={true} />
+                            onChangeState={(state) => this.onChangeEmailState(state)}
+                            onChange={this.onChangeEmail}
+                            value={this.state.userEmail}
+                            label={"Email address"}
+                            required
+                            bestValueLength={50}
+                            minValueLength={20}
+                        />
+
+                        <CustomInput
+                            onChangeState={(state) => this.onChangePasswordState(state)}
+                            onChange={this.onChangePassword}
+                            value={this.state.userPassword}
+                            label={"Create Password"}
+                            bestValueLength={20}
+                            minValueLength={10}
+                            required
+                            type={'password'}
+                            alwaysHideMetter={false}
+                            hideLine={false}
+                        />
+
+                        <CustomInput
+                            onChange={this.onChangePasswordConfirm}
+                            value={this.state.userPasswordConfirm}
+                            label={"Repeat password"}
+                            bestValueLength={20}
+                            minValueLength={10}
+                            required
+                            type={'password'}
+                            alwaysHideMetter={true}
+                        />
 
                         <CustomRadius checked={this.state.termsChecked} onClick={this.onChangeCheck} />
                         <CustomButton onClick={this.registerPost} text={"Register Account"} />

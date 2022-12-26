@@ -1,7 +1,7 @@
 .CustomInputConatiner {
   position: relative;
   width: 426px;
-  height: 64px;
+  height: 115px;
   align-self: center;
 }
 
@@ -26,7 +26,7 @@
   border: 1px solid #8692a6;
   font-weight: 700;
   width: inherit;
-  height: inherit;
+  height: 50px;
   box-sizing: border-box;
   padding: 0px 20px;
   font-size: 14px;
@@ -48,7 +48,7 @@
 .material-symbols-outlined {
   cursor: pointer;
   position: absolute;
-  top: 80%;
+  top: 35%;
   right: 5%;
   width: 30px;
   height: 24px;

@@ -82,8 +82,11 @@ export default class index extends Component {
                         <CustomInput required onChangeState={(state) => this.onChangePasswordState(state)} value={this.state.userPassword} onChange={this.onChangePassword} label={"Enter your password"} type={"password"} placeholder={"Write your password"} minValueLength={8} bestValueLength={25} errorMessage={"Not bad but you know you can do it better"} />
                         <CustomButton onClick={this.loginPost} text={"Login"} />
                     </form>
+
                     <p className='RegisterOpotion'>Don't have an account? <span onClick={this.props.changeActive}>Register </span></p>
+
                 </div>
+
             </div>
         )
     }
