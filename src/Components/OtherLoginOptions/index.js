@@ -8,12 +8,19 @@ import twitterIcon from '../../assest/images/twitter-48.png'
 export default class index extends Component {
     images = [
         {
+            indx: 1,
             src: googleIcon
-        }, {
+        },
+        {
+            indx: 2,
             src: twitterIcon
-        }, {
+        },
+        {
+            indx: 3,
             src: linkedInIcon
-        }, {
+        },
+        {
+            indx: 4,
             src: gitHubIcon
         }
     ]
@@ -21,8 +28,8 @@ export default class index extends Component {
     render() {
         return (
             <div className='LoginOptions'>
-                {this.images.map(img => {
-                    return <div className='SingleLoginOption'>
+                {this.images.map((img) => {
+                    return <div className='SingleLoginOption' key={img.indx}>
                         <img className='SingleLoginOptionImage' alt='' {...img} />
                     </div>
                 })

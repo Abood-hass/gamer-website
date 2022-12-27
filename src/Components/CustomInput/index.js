@@ -30,7 +30,6 @@ export default class index extends Component {
                 , hideMetter: false
             })
 
-            this.props.onChangeState((event.target.value.length >= this.props.minValueLength))
 
         } catch (error) {
 

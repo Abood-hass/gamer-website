@@ -6,18 +6,30 @@ import OrLine from '../../Components/OrLine'
 import OtherLoginOptions from '../../Components/OtherLoginOptions'
 import HeaderPage from '../../Components/HeaderPage'
 import crescentMoon from '../../assest/images/crescent-moon-64.png'
+import * as yup from 'yup';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './style.css'
 
 export default class index extends Component {
 
+    notify = (errs) => toast(errs ? errs.join(",") : "Done");
 
     state = {
         userEmail: "",
-        userEmailReady: false,
         userPassword: "",
-        userPasswordReady: false,
         active: this.props.active || false
     }
+
+    passwordRegex = "^.*(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$"
+    regexp = /^\S*$/;
+
+    schema = yup.object().shape({
+        userEmail: yup.string().required("Email required").email("Email form is Wrong"),
+        userPassword: yup.string().required("Password required")
+            .matches(this.passwordRegex, "Password form is Wrong")
+            .matches(this.regexp, "Password form is Wrong"),
+    });
 
     onChangeEmail = (event) => {
         const input = event.target.value
@@ -36,25 +48,19 @@ export default class index extends Component {
     }
 
 
-    onChangeEmailState = (state) => {
-        this.setState({ userEmailReady: state })
-    }
-
-    onChangePasswordState = (state) => {
-        this.setState({ userPasswordReady: state })
-    }
-
     loginPost = (event) => {
         event.preventDefault()
-        if (
-            this.state.userEmailReady
-            &&
-            this.state.userPasswordReady
-        ) {
-            console.log("Ready");
-        } else {
-            console.log("Not Ready");
-        }
+
+        this.schema.validate(
+            {
+                userEmail: this.state.userEmail,
+                userPassword: this.state.userPassword
+            }, { abortEarly: false }
+        ).then(_ =>
+            this.notify()
+        ).catch(err => {
+            this.notify(err.errors)
+        })
     }
 
     render() {
@@ -74,12 +80,14 @@ export default class index extends Component {
                     <button className='ScrollToLoginButton' onClick={() => window.scrollTo(0, 1000)} >Go Login</button>
                 </div>
                 <div className='LoginScreenRight'>
+
+                    <ToastContainer />
                     <HeaderPage mainHeader={"Join the game!"} secondaryHeader={"Go inside the best gamers social network!"} MHStyle={{ textAlign: 'center' }} />
                     <OtherLoginOptions />
                     <OrLine />
                     <form>
-                        <CustomInput onChangeState={(state) => this.onChangeEmailState(state)} required value={this.state.userEmail} onChange={this.onChangeEmail} label={"Your email"} placeholder={"Write your email"} minValueLength={8} bestValueLength={25} errorMessage={"Not bad but you know you can do it better"} />
-                        <CustomInput required onChangeState={(state) => this.onChangePasswordState(state)} value={this.state.userPassword} onChange={this.onChangePassword} label={"Enter your password"} type={"password"} placeholder={"Write your password"} minValueLength={8} bestValueLength={25} errorMessage={"Not bad but you know you can do it better"} />
+                        <CustomInput required value={this.state.userEmail} onChange={this.onChangeEmail} label={"Your email"} placeholder={"Write your email"} minValueLength={8} bestValueLength={25} errorMessage={"Not bad but you know you can do it better"} />
+                        <CustomInput required value={this.state.userPassword} onChange={this.onChangePassword} label={"Enter your password"} type={"password"} placeholder={"Write your password"} minValueLength={8} bestValueLength={25} errorMessage={"Not bad but you know you can do it better"} />
                         <CustomButton onClick={this.loginPost} text={"Login"} />
                     </form>
 

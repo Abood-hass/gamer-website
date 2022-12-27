@@ -154,10 +154,10 @@
     height: 100vh;
   }
 
-  .ScrollToLoginButton {
-    display: none;
-  }
   .iconHeader {
     align-self: center;
+  }
+  .ScrollToLoginButton {
+    display: none;
   }
 }

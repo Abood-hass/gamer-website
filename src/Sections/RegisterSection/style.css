@@ -116,18 +116,18 @@
 
 @media screen and (max-height: 700px) {
   .RegisterSectionLeft {
-    height: 150vh;
+    height: 100vh;
   }
   .gamerImage {
-    height: 150vh;
+    height: 100vh;
   }
   .RegisterSectionLeft > * {
-    height: 150vh;
+    height: 100vh;
   }
   .RegisterSectionRight {
     display: flex;
     align-items: center;
-    height: 150vh;
+    height: 100vh;
   }
 }
 @media screen and (max-width: 1550px) {
@@ -147,13 +147,10 @@
     display: flex;
   }
 
-  .RegisterSection {
-    height: 150vh;
-  }
   .RegisterSectionRight {
     display: flex;
     align-items: center;
-    height: 150vh;
+    height: 120vh;
   }
   .RegisterSection {
     display: flex;
@@ -167,10 +164,15 @@
     margin: auto;
   }
 
-  .ScrollToLoginButton {
-    display: none;
-  }
   .iconHeader {
     align-self: center;
+  }
+
+  @media screen and (max-width: 900px) {
+    .RegisterSectionRight > form {
+      align-self: center;
+      width: 100%;
+      margin: auto;
+    }
   }
 }
