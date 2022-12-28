@@ -4,21 +4,25 @@ import CustomInput from '../../Components/CustomInput'
 import CustomButton from '../../Components/CustomButton'
 import OrLine from '../../Components/OrLine'
 import OtherLoginOptions from '../../Components/OtherLoginOptions'
+import PopupWindow from '../../Components/PopupWindow'
 import HeaderPage from '../../Components/HeaderPage'
 import crescentMoon from '../../assest/images/crescent-moon-64.png'
 import * as yup from 'yup';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import './style.css'
 
 export default class index extends Component {
 
-    notify = (errs) => toast(errs ? errs.join(",") : "Done");
 
     state = {
         userEmail: "",
         userPassword: "",
-        active: this.props.active || false
+        active: this.props.active || false,
+        popMsg: {
+            hidden: true,
+            errMsg: "",
+            alert: "Done",
+            headerStyle: "green"
+        }
     }
 
     passwordRegex = "^.*(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$"
@@ -47,6 +51,14 @@ export default class index extends Component {
         this.setState({ userPassword: input })
     }
 
+    onHideMsg = () => {
+        this.setState({ popMsg: { hidden: true } })
+    }
+
+    setPopMsg = (errMsg, headerStyle, alert) => {
+        this.setState({ popMsg: { errMsg, hidden: false, headerStyle, alert } })
+    }
+
 
     loginPost = (event) => {
         event.preventDefault()
@@ -57,15 +69,17 @@ export default class index extends Component {
                 userPassword: this.state.userPassword
             }, { abortEarly: false }
         ).then(_ =>
-            this.notify()
+            this.setPopMsg("Welcome Back", "green", "Login Done")
         ).catch(err => {
-            this.notify(err.errors)
+            this.setPopMsg(err.errors.join(" ,"))
         })
     }
 
     render() {
         return (
             <div className='LoginScreen'>
+                <PopupWindow hidden={this.state.popMsg.hidden} headerStyle={this.state.popMsg.headerStyle} onClick={this.onHideMsg} header={this.state.popMsg.alert} body={this.state.popMsg.errMsg} />
+
                 <div className='LoginScreenLeft'>
                     <div className='iconHeaderLogin'>
                         <img className="iconPart1Login" src={crescentMoon} alt="" />
@@ -81,7 +95,7 @@ export default class index extends Component {
                 </div>
                 <div className='LoginScreenRight'>
 
-                    <ToastContainer />
+                    {/* <ToastContainer /> */}
                     <HeaderPage mainHeader={"Join the game!"} secondaryHeader={"Go inside the best gamers social network!"} MHStyle={{ textAlign: 'center' }} />
                     <OtherLoginOptions />
                     <OrLine />

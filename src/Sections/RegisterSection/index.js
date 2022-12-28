@@ -7,7 +7,7 @@ import CustomButton from '../../Components/CustomButton'
 import CustomRadius from '../../Components/CustomRadius'
 import crescentMoon from '../../assest/images/white-crescent-moon-50.png'
 import * as yup from 'yup';
-import { ToastContainer, toast } from 'react-toastify';
+import PopupWindow from '../../Components/PopupWindow'
 import './style.css'
 
 export default class index extends Component {
@@ -16,9 +16,14 @@ export default class index extends Component {
         userEmail: "",
         userPassword: "",
         userPasswordConfirm: "",
+        popMsg: {
+            hidden: true,
+            errMsg: "",
+            alert: "Done",
+            headerStyle: "green"
+        }
     }
 
-    notify = (errs) => toast(errs ? errs.join(",") : "Done");
 
     passwordRegex = "^.*(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$"
     regexp = /^\S*$/;
@@ -64,6 +69,15 @@ export default class index extends Component {
         this.setState({ userPasswordReady: state })
     }
 
+
+    onHideMsg = () => {
+        this.setState({ popMsg: { hidden: true } })
+    }
+
+    setPopMsg = (errMsg, headerStyle, alert) => {
+        this.setState({ popMsg: { errMsg, hidden: false, headerStyle, alert } })
+    }
+
     registerPost = (event) => {
         event.preventDefault()
 
@@ -75,15 +89,17 @@ export default class index extends Component {
                 termsChecked: this.state.termsChecked
             }, { abortEarly: false }
         ).then(_ =>
-            this.notify()
+            this.setPopMsg("Welcome Back", "green", "Login Done")
         ).catch(err => {
-            this.notify(err.errors)
+            this.setPopMsg(err.errors.join(" ,"))
         })
     }
 
     render() {
         return (
             <div className='RegisterSection'>
+                <PopupWindow hidden={this.state.popMsg.hidden} headerStyle={this.state.popMsg.headerStyle} onClick={this.onHideMsg} header={this.state.popMsg.alert} body={this.state.popMsg.errMsg} />
+
 
                 <div className='RegisterSectionLeft'>
                     <img src={gamerImage} alt="" className="gamerImage" />
@@ -99,7 +115,6 @@ export default class index extends Component {
                     </div>
                 </div>
                 <div className='RegisterSectionRight'>
-                    <ToastContainer />
                     <div className='iconHeader' id="secondPageHeader">
                         <img className="iconPart1" src={crescentMoon} alt="" />
                         <img className="iconPart2" src={crescentMoon} alt="" />
