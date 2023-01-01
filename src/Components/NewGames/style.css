@@ -1,0 +1,73 @@
+.NewGamesSliderContainer {
+  user-select: none;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  align-items: flex-start;
+  width: 100%;
+  max-height: 40vh;
+}
+
+.NewGamesSliderContainer > p:nth-of-type(1) {
+  position: absolute;
+}
+
+.NewGamesSliderContainer > p:nth-of-type(2) {
+  height: 40px;
+}
+.NewGamesSliderContainer > p {
+  margin-top: 5px;
+  margin-bottom: 25px;
+  font-family: Gilroy;
+  font-size: 35px;
+  font-weight: 800;
+  line-height: 43px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.NewGamesSlider {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-around;
+  min-width: 95vw;
+  gap: 20px;
+}
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #e1e1e1;
+  border: 13px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2c2b2b;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #d7d0d0;
+}
+::-webkit-scrollbar-track {
+  background: #ffffff;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+@media screen and (max-width: 600px) {
+  .NewGamesSliderContainer {
+    width: var(--Mobile-NewGameCardWidth);
+    padding: 0px;
+    margin: 0px auto;
+  }
+}

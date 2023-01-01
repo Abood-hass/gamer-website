@@ -50,6 +50,7 @@
   height: 56%;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
 }
 .PageHeader {
   margin-top: 15px;
@@ -98,7 +99,8 @@
   text-align: left;
   color: #696f79;
 }
-.RegisterOpotion > span {
+.Link {
+  text-decoration: none;
   cursor: pointer;
   color: #1565d8;
 }
@@ -146,7 +148,6 @@
   .LoginScreen {
     padding: 0px;
     background-position: 50%;
-    margin-left: -13px;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -159,5 +160,11 @@
   }
   .ScrollToLoginButton {
     display: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .LoginScreen {
+    width: 100%;
   }
 }

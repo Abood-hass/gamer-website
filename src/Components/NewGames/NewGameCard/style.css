@@ -1,0 +1,84 @@
+.NewGameCardContainer {
+  cursor: pointer;
+  position: relative;
+  width: 400px;
+  z-index: 2;
+  height: 210px;
+}
+.Bg-Image {
+  height: inherit;
+  width: inherit;
+  object-fit: cover;
+  border-radius: 20px;
+  filter: brightness(0.5);
+}
+.Logo-Image {
+  z-index: 2;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  object-fit: contain;
+  height: 100px;
+  width: 200px;
+  filter: drop-shadow(0px 0px 5px #fff);
+}
+
+.Character-Image {
+  z-index: 1;
+  position: absolute;
+  width: fit-content;
+  height: 210px;
+  object-fit: contain;
+  bottom: 0px;
+  border-bottom-left-radius: 20px;
+  transition: all 200ms;
+}
+
+.Game-Desc {
+  z-index: 2;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  font-family: Gilroy;
+  font-size: 15px;
+  width: 300px;
+  text-align: end;
+  height: fit-content;
+  text-align: right;
+  margin: 10px;
+  color: #fff;
+}
+
+.CardStyle-1 > .Game-Desc {
+  text-align: left;
+  left: 0px;
+}
+.CardStyle-1 > .Logo-Image {
+  left: 0px;
+}
+.CardStyle-1 > .Character-Image {
+  height: 250px;
+  right: -15px;
+  bottom: 15px;
+  transform: rotate(18.8deg);
+}
+
+@media screen and (max-width: 600px) {
+  .NewGameCardContainer {
+    width: var(--Mobile-NewGameCardWidth);
+  }
+
+  .Game-Desc {
+    font-size: 20px;
+  }
+
+  .Character-Image {
+    display: none;
+  }
+
+  .Logo-Image {
+    height: fit-content;
+    width: 300px;
+    left: 0px;
+  }
+}

@@ -9,6 +9,7 @@ import crescentMoon from '../../assest/images/white-crescent-moon-50.png'
 import * as yup from 'yup';
 import PopupWindow from '../../Components/PopupWindow'
 import './style.css'
+import { Link } from 'react-router-dom'
 
 export default class index extends Component {
     state = {
@@ -42,6 +43,7 @@ export default class index extends Component {
 
         termsChecked: yup.boolean().test("", "terms & conditions must be Checked", value => value)
     });
+
 
     onChangeEmail = (e) => {
         this.setState({ userEmail: e.target.value })
@@ -120,7 +122,7 @@ export default class index extends Component {
                         <img className="iconPart2" src={crescentMoon} alt="" />
                         <h4>Gamers</h4>
                     </div>
-                    <p className='backButton' onClick={this.props.changeActive}>&#x2039;  Back</p>
+                    <Link className='backButton' to={'/'}>&#x2039;  Back</Link>
                     <HeaderPage secondaryHeader={'For the purpose of gamers regulation, your details are required.'} mainHeader={'Register Individual Account!'} />
                     <form>
                         <CustomInput

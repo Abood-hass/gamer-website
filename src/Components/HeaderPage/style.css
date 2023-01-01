@@ -16,3 +16,9 @@
   color: #8692a6;
   font-family: "Inter";
 }
+
+@media screen and (max-width: 400px) {
+  .headerContainer {
+    width: 315px;
+  }
+}

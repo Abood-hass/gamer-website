@@ -9,20 +9,28 @@ import HeaderPage from '../../Components/HeaderPage'
 import crescentMoon from '../../assest/images/crescent-moon-64.png'
 import * as yup from 'yup';
 import './style.css'
+import { Link } from 'react-router-dom';
 
 export default class index extends Component {
-
 
     state = {
         userEmail: "",
         userPassword: "",
-        active: this.props.active || false,
         popMsg: {
             hidden: true,
             errMsg: "",
             alert: "Done",
             headerStyle: "green"
         }
+    }
+
+    componentDidMount() {
+        let previUserEmail = window.localStorage.getItem("user-email");
+        let previUserPassword = window.localStorage.getItem("user-password");
+        if (previUserEmail && previUserPassword) {
+            this.props.navigate('/mainPage')
+        }
+
     }
 
     passwordRegex = "^.*(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$"
@@ -34,6 +42,7 @@ export default class index extends Component {
             .matches(this.passwordRegex, "Password form is Wrong")
             .matches(this.regexp, "Password form is Wrong"),
     });
+
 
     onChangeEmail = (event) => {
         const input = event.target.value
@@ -68,11 +77,15 @@ export default class index extends Component {
                 userEmail: this.state.userEmail,
                 userPassword: this.state.userPassword
             }, { abortEarly: false }
-        ).then(_ =>
-            this.setPopMsg("Welcome Back", "green", "Login Done")
-        ).catch(err => {
-            this.setPopMsg(err.errors.join(" ,"))
+        ).then(_ => {
+            window.localStorage.setItem("user-email", this.state.userEmail)
+            window.localStorage.setItem("user-password", this.state.userPassword)
+            this.props.navigate('/mainPage')
+
         })
+            .catch(err => {
+                this.setPopMsg(err.errors.join(" ,"))
+            })
     }
 
     render() {
@@ -105,7 +118,7 @@ export default class index extends Component {
                         <CustomButton onClick={this.loginPost} text={"Login"} />
                     </form>
 
-                    <p className='RegisterOpotion'>Don't have an account? <span onClick={this.props.changeActive}>Register </span></p>
+                    <p className='RegisterOpotion'>Don't have an account?  <Link className='Link' to={'/register'}>Register</Link> </p>
 
                 </div>
 

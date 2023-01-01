@@ -94,12 +94,13 @@
 
 .RegisterSectionRight > form {
   display: flex;
-  height: 90%;
+  height: 80%;
   flex-direction: column;
   justify-content: space-around;
 }
 
 .backButton {
+  text-decoration: none;
   font-family: Inter;
   font-size: 16px;
   font-weight: 600;
@@ -150,7 +151,7 @@
   .RegisterSectionRight {
     display: flex;
     align-items: center;
-    height: 120vh;
+    height: 100vh;
   }
   .RegisterSection {
     display: flex;
@@ -161,18 +162,13 @@
   .RegisterSectionRight > form {
     align-self: center;
     width: 650px;
+    align-self: center;
+    height: 100%;
+    width: 100%;
     margin: auto;
   }
 
   .iconHeader {
     align-self: center;
-  }
-
-  @media screen and (max-width: 900px) {
-    .RegisterSectionRight > form {
-      align-self: center;
-      width: 100%;
-      margin: auto;
-    }
   }
 }

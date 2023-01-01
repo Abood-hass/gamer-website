@@ -28,3 +28,9 @@
   letter-spacing: 0em;
   text-align: left;
 }
+
+@media screen and (max-width: 500px) {
+  .customRadios {
+    width: 350px;
+  }
+}

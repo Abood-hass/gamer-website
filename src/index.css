@@ -10,8 +10,23 @@
   src: url(./assest/fonts/Gayathri-Bold.ttf);
   font-weight: bold;
 }
+
+@font-face {
+  font-family: Gilroy;
+  src: url(./assest/fonts/Gilroy-ExtraBold.otf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Gilroy;
+  src: url(./assest/fonts/Gilroy-Light.otf);
+  font-weight: thin;
+}
+* {
+  margin: 0px;
+  --Mobile-NewGameCardWidth: 90vw;
+}
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
