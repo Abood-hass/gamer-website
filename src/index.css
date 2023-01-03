@@ -4,7 +4,11 @@
   src: url(./assest/fonts/Righteous-Regular.ttf);
   font-weight: bold;
 }
-
+@font-face {
+  font-family: arcade-classic;
+  src: url(./assest/fonts/ARCADECLASSIC.TTF);
+  font-weight: bold;
+}
 @font-face {
   font-family: Gayathri-Bold;
   src: url(./assest/fonts/Gayathri-Bold.ttf);

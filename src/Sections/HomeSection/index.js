@@ -3,6 +3,8 @@ import AvatarBox from '../../Components/AvatarBox'
 import DrawerSide from '../../Components/DrawerSide'
 import NewGamesSlider from '../../Components/NewGames'
 import LastPlayedList from '../../Components/LastPlayedList'
+import MostRecent from '../../Components/MostRecent'
+import FreindsList from '../../Components/FreindsList'
 import './style.css'
 
 export default class index extends Component {
@@ -15,6 +17,8 @@ export default class index extends Component {
                     <NewGamesSlider />
                     <div className='HomeMainLower' >
                         <LastPlayedList />
+                        <MostRecent />
+                        <FreindsList />
                     </div>
                 </div>
             </div>

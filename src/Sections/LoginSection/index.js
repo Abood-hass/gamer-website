@@ -24,14 +24,6 @@ export default class index extends Component {
         }
     }
 
-    componentDidMount() {
-        let previUserEmail = window.localStorage.getItem("user-email");
-        let previUserPassword = window.localStorage.getItem("user-password");
-        if (previUserEmail && previUserPassword) {
-            this.props.navigate('/mainPage')
-        }
-
-    }
 
     passwordRegex = "^.*(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$"
     regexp = /^\S*$/;

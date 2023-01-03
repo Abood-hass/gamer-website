@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1.8fr 0.2fr;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-color: #fbfbfb;
 }
 
@@ -10,19 +10,44 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  align-items: flex-end;
+  align-items: flex-start;
   box-sizing: border-box;
   height: 100vh;
-  width: 95vw;
+  width: fit-content;
   padding: 5px 0px 5px 10px;
 }
 .HomeMainLower {
   display: grid;
-  grid-template-columns: 1fr 1.5fr 0.5fr;
+  width: 94vw;
+  grid-template-columns: repeat(3, 0.4fr);
+  gap: 20px;
 }
 
 @media screen and (max-width: 800px) {
+  .HomeContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    overflow-x: hidden;
+  }
   .HomeMain {
+    height: fit-content;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90vw;
+  }
+  .HomeMainLower {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100vw;
   }
 }

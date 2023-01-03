@@ -1,8 +1,17 @@
 import React, { Component } from 'react'
+import { Autoplay, Navigation, Pagination } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import NewGames from './NewGameCard'
+import { isBrowser, isMobile } from 'react-device-detect'
 import './style.css'
 
 export default class index extends Component {
+
+
+    state = {
+        userMobile: false
+    }
+
     NewGamesData = [
         {
             logoImage: 'https://s3-alpha-sig.figma.com/img/4e94/80c6/5cd6b8b225145f547dd1958dc01941ac?Expires=1673222400&Signature=afiyHHJSoRC34Jkt8myVSHD7~g6xa91on5w44QRsuu3sQYcPl4bqxeKyyVRtbWgqDxasbQR2NYcy6-I2xZxNpe42qDOAKdKyrDf1n0z~w42rN9bnKRrbaqPJBhNuZqqsohKP76honYoQkuIzQgb84aY3iOmRwCc2L52G4PacejFP2iO-CLZsvb6iIYqqhCu0IvQNewYZitd66dIEGwGCTJ-SyVf8pPEhWFoaK5sbvGhs6H8DU~EV9N3fvLFyuKds1pHUmHIqCg0k-cGlRrvlqay7rYO5Y-7PPSwQSwL4MKshfFx4CitwBX2hhlpA4rQzZ22R8jYEcpHVAl2PpKge7w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4'
@@ -28,12 +37,27 @@ export default class index extends Component {
         return (
             <div className='NewGamesSliderContainer'>
                 <p>New Games</p>
-                <p> </p>
-                <div className='NewGamesSlider' onBlur={_ => { }}>
-                    {this.NewGamesData.map((newGame, index) => <NewGames key={index} {...newGame} />)}
-                    {this.NewGamesData.map((newGame, index) => <NewGames key={index} {...newGame} />)}
-                </div>
-            </div>
+                <Swiper
+                    slidesPerView={isMobile ? 1 : (isBrowser ? 3 : 2)}
+                    spaceBetween={30}
+                    slidesPerGroup={isMobile ? 1 : (isBrowser ? 3 : 2)}
+                    loop={true}
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true
+                    }}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    navigation={true}
+                    modules={[Autoplay, Pagination, Navigation]}
+                    className={`mySwiper`}
+                    style={{ userSelect: 'none', maxWidth: '90vw' }}>
+                    {this.NewGamesData.map((newGame, index) => <SwiperSlide style={{ overflow: 'visible' }}><NewGames key={index} {...newGame} /></SwiperSlide>)}
+
+                </Swiper>
+            </div >
         )
     }
 }

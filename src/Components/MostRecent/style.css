@@ -1,0 +1,20 @@
+.MostRecentContainer {
+  height: fit-content;
+  width: 30vw;
+}
+.MostRecentContainer > p {
+  margin-top: 5px;
+  margin-bottom: 25px;
+  font-family: Gilroy;
+  font-size: 35px;
+  font-weight: 800;
+  line-height: 43px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+@media screen and (max-width: 800px) {
+  .MostRecentContainer {
+    width: 90vw;
+  }
+}

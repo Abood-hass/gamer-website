@@ -7,7 +7,7 @@ export default class index extends Component {
     }
 
     hoverIn = () => {
-        this.setState({ imageCharacterHover: this.props.CardStyleType ? { height: '300px', transform: ' matrix(0.96, 0.39, -0.27, 0.93, 0, 0)' } : { height: '250px' } })
+        this.setState({ imageCharacterHover: this.props.CardStyleType ? { height: '210px', transform: ' matrix(0.96, 0.39, -0.27, 0.93, 0, 0)' } : { height: '180px' } })
     }
 
     hoverOut = () => {

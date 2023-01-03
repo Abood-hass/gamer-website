@@ -1,4 +1,6 @@
 .LastPlayedItemContainer {
+  display: flex;
+  align-items: center;
   padding-left: 13%;
   position: relative;
   box-sizing: border-box;
@@ -24,4 +26,10 @@
   width: 200px;
   height: fit-content;
   text-align: left;
+}
+
+@media screen and (max-width: 800px) {
+  .LastPlayedItemContainer {
+    width: 80vw;
+  }
 }
