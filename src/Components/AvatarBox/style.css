@@ -29,7 +29,7 @@
   display: flex;
   position: absolute;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   overflow: hidden;
   left: 10px;
   top: 100px;
@@ -46,6 +46,10 @@
 .MenuBox > img {
   width: 35px;
   height: 35px;
+}
+
+.darkMenu {
+  background: #02104b;
 }
 @media screen and (max-width: 800px) {
   .AvatarBoxContainer > img {

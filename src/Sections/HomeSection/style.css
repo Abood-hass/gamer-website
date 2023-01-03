@@ -44,10 +44,15 @@
     width: 90vw;
   }
   .HomeMainLower {
-    height: fit-content;
+    height: 160vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100vw;
   }
+}
+
+.dark {
+  background-color: #030a23;
+  color: white;
 }

@@ -21,7 +21,7 @@ export default class index extends Component {
 
                     </div>
                     <div className='DrawerSideIcons' style={{ justifyContent: 'flex-end' }}>
-                        <ThemeModeSwitch />
+                        <ThemeModeSwitch changeTheme={this.props.changeTheme} />
                     </div>
                 </div>
                 <hr />

@@ -8,12 +8,25 @@ import FreindsList from '../../Components/FreindsList'
 import './style.css'
 
 export default class index extends Component {
+    state = {
+        theme: 'light'
+    }
+    componentWillMount() {
+        this.setState({ theme: localStorage.getItem('theme') })
+    }
+    changeTheme = (theme) => {
+        if (theme !== this.state.theme) {
+            this.setState({ theme: theme })
+            localStorage.setItem('theme', theme)
+        }
+    }
+
     render() {
         return (
-            <div className='HomeContainer'>
-                <DrawerSide />
+            <div className={`HomeContainer ${this.state.theme}`}>
+                <DrawerSide changeTheme={this.changeTheme} />
                 <div className='HomeMain' >
-                    <AvatarBox name={"abood"} avatar={'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'} />
+                    <AvatarBox changeTheme={this.changeTheme} name={"abood"} avatar={'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'} />
                     <NewGamesSlider />
                     <div className='HomeMainLower' >
                         <LastPlayedList />

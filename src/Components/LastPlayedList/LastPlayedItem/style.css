@@ -27,6 +27,9 @@
   height: fit-content;
   text-align: left;
 }
+.darkLastPlayedItem {
+  background: #02104b;
+}
 
 @media screen and (max-width: 800px) {
   .LastPlayedItemContainer {

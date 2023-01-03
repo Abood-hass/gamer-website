@@ -25,12 +25,12 @@ export default class index extends Component {
                         `${this.props.name}!`
                     }</span>
                 <img src={this.props.avatar} alt='' onClick={this.onClickOnAvatar} />
-                <div className='MenuBox' style={{ height: this.state.menuShowed ? '100px' : '0px' }}>
+                <div className={`MenuBox ${localStorage.getItem("theme") + "Menu"}`} style={{ height: this.state.menuShowed ? '100px' : '0px' }}>
 
                     <img src={like} alt='' />
                     <img src={settings} alt='' />
                     <img src={puzzle} alt='' />
-                    <ThemeModeSwitch style={{ flexDirection: 'row', width: '100px', height: '30px' }} />
+                    <ThemeModeSwitch changeTheme={this.props.changeTheme} style={{ flexDirection: 'row', width: '100px', height: '30px' }} />
                 </div>
             </div>
         )
