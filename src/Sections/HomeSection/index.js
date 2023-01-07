@@ -8,11 +8,10 @@ import FreindsList from '../../Components/FreindsList'
 import './style.css'
 
 export default class index extends Component {
+
+
     state = {
-        theme: 'light'
-    }
-    componentWillMount() {
-        this.setState({ theme: localStorage.getItem('theme') })
+        theme: localStorage.getItem('theme') || 'light'
     }
     changeTheme = (theme) => {
         if (theme !== this.state.theme) {

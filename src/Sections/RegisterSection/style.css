@@ -4,7 +4,6 @@
 }
 .RegisterSectionLeft {
   position: relative;
-  height: 100vh;
 }
 
 .iconPart1,
@@ -37,7 +36,7 @@
 }
 
 .gamerImage {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   position: absolute;
   object-fit: cover;
@@ -57,7 +56,7 @@
   align-items: flex-start;
   justify-content: space-around;
   background-color: #1565d8d5;
-  height: 100vh;
+  height: 100%;
   width: 700px;
 }
 
@@ -85,18 +84,25 @@
 }
 .RegisterSectionRight {
   display: flex;
+  padding: 0px 10px;
   position: relative;
   flex-direction: column;
-  gap: 20px;
   align-items: center;
-  justify-content: space-evenly;
 }
 
 .RegisterSectionRight > form {
   display: flex;
-  height: 80%;
+  height: fit-content;
   flex-direction: column;
   justify-content: space-around;
+}
+
+.Buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 200px;
 }
 
 .backButton {
@@ -115,22 +121,6 @@
   position: absolute;
 }
 
-@media screen and (max-height: 700px) {
-  .RegisterSectionLeft {
-    height: 100vh;
-  }
-  .gamerImage {
-    height: 100vh;
-  }
-  .RegisterSectionLeft > * {
-    height: 100vh;
-  }
-  .RegisterSectionRight {
-    display: flex;
-    align-items: center;
-    height: 100vh;
-  }
-}
 @media screen and (max-width: 1550px) {
   .gamerImage {
     width: 100%;
@@ -140,7 +130,7 @@
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 900px) and (max-height: 1000px) {
   .RegisterSectionLeft {
     display: none;
   }
@@ -151,11 +141,12 @@
   .RegisterSectionRight {
     display: flex;
     align-items: center;
-    height: 100vh;
+    height: 150%;
   }
   .RegisterSection {
     display: flex;
     align-items: center;
+    height: 150%;
     flex-direction: column;
     width: 100%;
   }

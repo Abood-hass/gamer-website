@@ -15,6 +15,7 @@ export default class index extends Component {
     state = {
         termsChecked: false,
         userEmail: "",
+        userName: "",
         userPassword: "",
         userPasswordConfirm: "",
         popMsg: {
@@ -22,7 +23,9 @@ export default class index extends Component {
             errMsg: "",
             alert: "Done",
             headerStyle: "green"
-        }
+        },
+        data: []
+
     }
 
 
@@ -45,8 +48,17 @@ export default class index extends Component {
     });
 
 
+    async componentDidMount() {
+        await fetch('https://jsonplaceholder.typicode.com/users')
+            .then((response) => response.json())
+            .then((data) => this.setState({ data }));
+    }
     onChangeEmail = (e) => {
         this.setState({ userEmail: e.target.value })
+    }
+
+    onChangeName = (e) => {
+        this.setState({ userName: e.target.value })
     }
 
     onChangePassword = (e) => {
@@ -90,8 +102,15 @@ export default class index extends Component {
                 userPasswordConfirm: this.state.userPasswordConfirm,
                 termsChecked: this.state.termsChecked
             }, { abortEarly: false }
-        ).then(_ =>
-            this.setPopMsg("Welcome Back", "green", "Login Done")
+        ).then(_ => {
+            if (this.state.data.find(user => user.email === this.state.userEmail)) {
+                this.setPopMsg("There is User already with this Info")
+            } else {
+                window.localStorage.setItem("user-email", this.state.userEmail)
+                window.localStorage.setItem("user-password", this.state.userPassword)
+                this.props.navigate('/mainPage', { state: { userName: this.state.userName } })
+            }
+        }
         ).catch(err => {
             this.setPopMsg(err.errors.join(" ,"))
         })
@@ -125,6 +144,15 @@ export default class index extends Component {
                     <Link className='backButton' to={'/'}>&#x2039;  Back</Link>
                     <HeaderPage secondaryHeader={'For the purpose of gamers regulation, your details are required.'} mainHeader={'Register Individual Account!'} />
                     <form>
+
+                        <CustomInput
+                            onChange={this.onChangeName}
+                            value={this.state.userName}
+                            label={"User Name"}
+                            required
+                            bestValueLength={5}
+                            minValueLength={5}
+                        />
                         <CustomInput
                             onChange={this.onChangeEmail}
                             value={this.state.userEmail}
@@ -132,6 +160,7 @@ export default class index extends Component {
                             required
                             bestValueLength={20}
                             minValueLength={1}
+                            type={'email'}
                         />
 
                         <CustomInput
@@ -156,11 +185,12 @@ export default class index extends Component {
                             type={'password'}
                             alwaysHideMetter={true}
                         />
-
-                        <CustomRadius checked={this.state.termsChecked} onClick={this.onChangeCheck} />
-                        <CustomButton onClick={this.registerPost} text={"Register Account"} />
-                        <OrLine />
-                        <CustomButton text={"login"} type />
+                        <div className='Buttons'>
+                            <CustomRadius checked={this.state.termsChecked} onClick={this.onChangeCheck} />
+                            <CustomButton onClick={this.registerPost} text={"Register Account"} />
+                            <OrLine />
+                            <CustomButton text={"login"} type />
+                        </div>
                     </form>
                 </div>
             </div>

@@ -21,7 +21,8 @@ export default class index extends Component {
             errMsg: "",
             alert: "Done",
             headerStyle: "green"
-        }
+        },
+        data: []
     }
 
 
@@ -35,6 +36,12 @@ export default class index extends Component {
             .matches(this.regexp, "Password form is Wrong"),
     });
 
+
+    async componentDidMount() {
+        await fetch('https://jsonplaceholder.typicode.com/users')
+            .then((response) => response.json())
+            .then((data) => this.setState({ data }));
+    }
 
     onChangeEmail = (event) => {
         const input = event.target.value
@@ -70,9 +77,13 @@ export default class index extends Component {
                 userPassword: this.state.userPassword
             }, { abortEarly: false }
         ).then(_ => {
-            window.localStorage.setItem("user-email", this.state.userEmail)
-            window.localStorage.setItem("user-password", this.state.userPassword)
-            this.props.navigate('/mainPage')
+            if (this.state.data.find(user => user.email === this.state.userEmail)) {
+                window.localStorage.setItem("user-email", this.state.userEmail)
+                window.localStorage.setItem("user-password", this.state.userPassword)
+                this.props.navigate('/mainPage')
+            } else {
+                this.setPopMsg("No User with this Info")
+            }
 
         })
             .catch(err => {
