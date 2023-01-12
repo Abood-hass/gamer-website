@@ -32,7 +32,7 @@ export default class index extends Component {
                                 {
                                     [...new Array(index === 0 ? 5 : (index === 5 ? 5 : (6)))].map((circle, index) => {
                                         let randomColor = Math.floor(Math.random() * 16777215).toString(16);
-                                        let randomFreind = this.freinds[Math.floor(Math.random() * (this.freinds.length) * 2)]
+                                        let randomFreind = this.freinds[Math.floor(Math.random() * (this.freinds.length) * 4)]
                                         let size = this.getRandomSize(30, 40)
                                         let randomHigh = (randomFreind) ? size : 30
                                         let randomWidth = randomHigh

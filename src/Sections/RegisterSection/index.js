@@ -10,6 +10,7 @@ import * as yup from 'yup';
 import PopupWindow from '../../Components/PopupWindow'
 import './style.css'
 import { Link } from 'react-router-dom'
+import { BASE_URL } from '../../config'
 
 export default class index extends Component {
     state = {
@@ -24,10 +25,10 @@ export default class index extends Component {
             alert: "Done",
             headerStyle: "green"
         },
-        data: []
 
     }
 
+    registerUrl = '/api/users/signup'
 
     passwordRegex = "^.*(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$"
     regexp = /^\S*$/;
@@ -48,11 +49,6 @@ export default class index extends Component {
     });
 
 
-    async componentDidMount() {
-        await fetch('https://jsonplaceholder.typicode.com/users')
-            .then((response) => response.json())
-            .then((data) => this.setState({ data }));
-    }
     onChangeEmail = (e) => {
         this.setState({ userEmail: e.target.value })
     }
@@ -102,14 +98,28 @@ export default class index extends Component {
                 userPasswordConfirm: this.state.userPasswordConfirm,
                 termsChecked: this.state.termsChecked
             }, { abortEarly: false }
-        ).then(_ => {
-            if (this.state.data.find(user => user.email === this.state.userEmail)) {
-                this.setPopMsg("There is User already with this Info")
-            } else {
-                window.localStorage.setItem("user-email", this.state.userEmail)
-                window.localStorage.setItem("user-password", this.state.userPassword)
-                this.props.navigate('/mainPage', { state: { userName: this.state.userName } })
-            }
+        ).then(async _ => {
+            await fetch(BASE_URL + this.registerUrl,
+                {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name: this.state.userName, email: this.state.userEmail, password: this.state.userPassword })
+                })
+                .then((response) => response.json())
+                .then((data) => {
+                    if (data.token) {
+                        localStorage.setItem('token', data.token)
+                        localStorage.setItem('name', data.name)
+                        localStorage.setItem('email', data.email)
+                        this.setPopMsg("Welcome to the Family", "green", "Submited")
+                        setTimeout(() => this.props.navigate('/mainPage', { state: { userName: this.state.userName } }), 3000)
+                    } else {
+                        this.setPopMsg(data.message)
+                    }
+
+
+                })
+                .catch(err => this.setPopMsg(err || "Something Wrong"))
         }
         ).catch(err => {
             this.setPopMsg(err.errors.join(" ,"))
@@ -141,7 +151,7 @@ export default class index extends Component {
                         <img className="iconPart2" src={crescentMoon} alt="" />
                         <h4>Gamers</h4>
                     </div>
-                    <Link className='backButton' to={'/'}>&#x2039;  Back</Link>
+                    <Link className='backButton' to={'/login'}>&#x2039;  Back</Link>
                     <HeaderPage secondaryHeader={'For the purpose of gamers regulation, your details are required.'} mainHeader={'Register Individual Account!'} />
                     <form>
 

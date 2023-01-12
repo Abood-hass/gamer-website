@@ -10,6 +10,7 @@ import crescentMoon from '../../assest/images/crescent-moon-64.png'
 import * as yup from 'yup';
 import './style.css'
 import { Link } from 'react-router-dom';
+import { BASE_URL } from '../../config';
 
 export default class index extends Component {
 
@@ -22,8 +23,8 @@ export default class index extends Component {
             alert: "Done",
             headerStyle: "green"
         },
-        data: []
     }
+    loginUrl = "/api/users/login"
 
 
     passwordRegex = "^.*(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$"
@@ -32,16 +33,11 @@ export default class index extends Component {
     schema = yup.object().shape({
         userEmail: yup.string().required("Email required").email("Email form is Wrong"),
         userPassword: yup.string().required("Password required")
-            .matches(this.passwordRegex, "Password form is Wrong")
-            .matches(this.regexp, "Password form is Wrong"),
+        // .matches(this.passwordRegex, "Password form is Wrong")
+        // .matches(this.regexp, "Password form is Wrong"),
     });
 
 
-    async componentDidMount() {
-        await fetch('https://jsonplaceholder.typicode.com/users')
-            .then((response) => response.json())
-            .then((data) => this.setState({ data }));
-    }
 
     onChangeEmail = (event) => {
         const input = event.target.value
@@ -76,14 +72,26 @@ export default class index extends Component {
                 userEmail: this.state.userEmail,
                 userPassword: this.state.userPassword
             }, { abortEarly: false }
-        ).then(_ => {
-            if (this.state.data.find(user => user.email === this.state.userEmail)) {
-                window.localStorage.setItem("user-email", this.state.userEmail)
-                window.localStorage.setItem("user-password", this.state.userPassword)
-                this.props.navigate('/mainPage')
-            } else {
-                this.setPopMsg("No User with this Info")
-            }
+        ).then(async _ => {
+            await fetch(BASE_URL + this.loginUrl,
+                {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: this.state.userEmail, password: this.state.userPassword })
+                })
+                .then((response) => response.json())
+                .then((data) => {
+                    if (data.token) {
+                        localStorage.setItem('token', data.token)
+                        localStorage.setItem('name', data.name)
+                        localStorage.setItem('email', data.email)
+                        localStorage.setItem('admin', data.isAdmin)
+                        this.setPopMsg("Welcome Back", "blue", "Logged in")
+                        setTimeout(() => this.props.navigate('/mainPage'), 1000)
+                    } else {
+                        this.setPopMsg(data.message)
+                    }
+                })
 
         })
             .catch(err => {
@@ -117,7 +125,7 @@ export default class index extends Component {
                     <OrLine />
                     <form>
                         <CustomInput required value={this.state.userEmail} onChange={this.onChangeEmail} label={"Your email"} placeholder={"Write your email"} minValueLength={8} bestValueLength={25} errorMessage={"Not bad but you know you can do it better"} />
-                        <CustomInput required value={this.state.userPassword} onChange={this.onChangePassword} label={"Enter your password"} type={"password"} placeholder={"Write your password"} minValueLength={8} bestValueLength={25} errorMessage={"Not bad but you know you can do it better"} />
+                        <CustomInput required value={this.state.userPassword} onChange={this.onChangePassword} label={"Enter your password"} type={"password"} placeholder={"Write your password"} minValueLength={5} bestValueLength={25} errorMessage={"Not bad but you know you can do it better"} />
                         <CustomButton onClick={this.loginPost} text={"Login"} />
                     </form>
 

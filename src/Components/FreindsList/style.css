@@ -77,12 +77,15 @@
   transition: all 200ms;
 }
 
-.FriendsList > div > .FriendItem:nth-of-type(1),
-.FriendsList > div:nth-of-type(1) > .FriendItem :hover {
+.FriendsList > div > span:nth-of-type(1),
+.FriendsList > div:nth-of-type(1) > .FriendItem,
+.FriendsList > div > span:nth-last-child(1),
+.FriendsList > div:nth-last-child(1) > .FriendItem,
+.NoHover :hover {
+  height: 0px !important;
+  width: 0px !important;
 }
 
-.NoHover:hover {
-}
 @media screen and (max-width: 800px) {
   .FriendsListContainer {
     width: 90vw;

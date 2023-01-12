@@ -5,13 +5,16 @@ import RegisterSection from './Sections/RegisterSection'
 import HomeSection from './Sections/HomeSection'
 import ErrorSection from './Sections/ErrorSection'
 import { useNavigate, useRoutes } from "react-router-dom";
-import GetData from './Sections/GetData/GetData';
+import ProtectedRoute from './Sections/ProtectedRoute';
 
 export default function App() {
   let navigate = useNavigate()
   let Pages = useRoutes([
     {
       path: "/",
+      element: <ProtectedRoute navigate={navigate} />,
+    }, {
+      path: "/login",
       element: <LoginSection navigate={navigate} />,
     }, {
       path: "/register",
@@ -19,7 +22,6 @@ export default function App() {
     }, {
       path: "/mainPage",
       element: <HomeSection navigate={navigate} />,
-      // element: <GetData />
     }, {
       path: "*",
       element: <ErrorSection navigate={navigate} />,
