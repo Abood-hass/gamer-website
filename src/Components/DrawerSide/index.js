@@ -12,7 +12,7 @@ export default class index extends Component {
         admin: false
     }
     componentDidMount() {
-        this.setState({ admin: localStorage.getItem("admin") })
+        this.setState({ admin: localStorage.getItem("admin") === "true" })
     }
     render() {
         return (
@@ -23,9 +23,9 @@ export default class index extends Component {
                     </div>
                     <div className='DrawerSideIcons'>
                         <img src={like} alt='' />
-                        <img src={settings} alt='' />
+                        <img src={settings} alt='' onClick={() => this.props.navigate("/profile")} />
                         <img src={puzzle} alt='' />
-                        {this.state.admin && <img src={usersMangment} alt='' />}
+                        {this.state.admin && <img src={usersMangment} onClick={() => this.props.navigate("/DashboardPort")} alt='' />}
 
                     </div>
                     <div className='DrawerSideIcons' style={{ justifyContent: 'flex-end' }}>

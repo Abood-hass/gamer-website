@@ -83,6 +83,7 @@ export default class index extends Component {
                 .then((data) => {
                     if (data.token) {
                         localStorage.setItem('token', data.token)
+                        localStorage.setItem('id', data._id)
                         localStorage.setItem('name', data.name)
                         localStorage.setItem('email', data.email)
                         localStorage.setItem('admin', data.isAdmin)
@@ -119,7 +120,6 @@ export default class index extends Component {
                 </div>
                 <div className='LoginScreenRight'>
 
-                    {/* <ToastContainer /> */}
                     <HeaderPage mainHeader={"Join the game!"} secondaryHeader={"Go inside the best gamers social network!"} MHStyle={{ textAlign: 'center' }} />
                     <OtherLoginOptions />
                     <OrLine />

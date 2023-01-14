@@ -36,6 +36,7 @@
 }
 
 .DrawerSideIcons > img {
+  cursor: pointer;
   width: 40px;
   height: fit-content;
 }

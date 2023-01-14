@@ -9,7 +9,13 @@ import './style.css'
 
 export default class index extends Component {
     state = {
-        menuShowed: false
+        menuShowed: false,
+        admin: false
+    }
+
+    componentDidMount() {
+        this.setState({ admin: localStorage.getItem('admin') === "true" })
+        console.log(this.state.admin);
     }
     onClickOnAvatar = () => {
         if (window.screen.availWidth <= 800) {

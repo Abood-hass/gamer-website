@@ -109,7 +109,9 @@ export default class index extends Component {
                 .then((data) => {
                     if (data.token) {
                         localStorage.setItem('token', data.token)
+                        localStorage.setItem('id', data._id)
                         localStorage.setItem('name', data.name)
+                        localStorage.setItem('admin', "false")
                         localStorage.setItem('email', data.email)
                         this.setPopMsg("Welcome to the Family", "green", "Submited")
                         setTimeout(() => this.props.navigate('/mainPage', { state: { userName: this.state.userName } }), 3000)
