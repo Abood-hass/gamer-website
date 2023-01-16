@@ -1,6 +1,7 @@
 .DashboardBody {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .UsersTable,
@@ -136,5 +137,19 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .DashboardBody {
+    display: flex;
+    flex-direction: column-reverse;
+    height: 150vh;
+    gap: 10px;
+  }
+  .UserView,
+  .UsersTable {
+    height: 70vh;
+    width: 90%;
   }
 }

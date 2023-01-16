@@ -24,10 +24,9 @@ export default function App() {
     }, {
       path: "/mainPage",
       element: <HomeSection navigate={navigate} />,
-    }, {
-      path: "/profile",
-      element: <UserProfile navigate={navigate} />,
-    }, {
+    },
+    { path: "/profile", element: <UserProfile navigate={navigate} />, },
+    {
       path: "/DashboardPort",
       element: <ProtectedRouteDashboard navigate={navigate} />,
     }, {
