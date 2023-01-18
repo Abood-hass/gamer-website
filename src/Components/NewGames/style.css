@@ -1,0 +1,30 @@
+.NewGamesSliderContainer {
+  user-select: none;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  /* overflow-x: scroll;
+  overflow-y: hidden; */
+  align-items: flex-start;
+  width: 100%;
+  max-height: 40vh;
+}
+.NewGamesSliderContainer > p {
+  margin-top: 5px;
+  margin-bottom: 25px;
+  font-family: Gilroy;
+  font-size: 35px;
+  font-weight: 800;
+  line-height: 43px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+@media screen and (max-width: 600px) {
+  .NewGamesSliderContainer {
+    width: var(--Mobile-NewGameCardWidth);
+    height: fit-content;
+    padding: 0px;
+    margin: 0px auto;
+  }
+}

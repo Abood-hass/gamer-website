@@ -1,0 +1,48 @@
+.DrawerSideContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 5vw;
+  height: 100vh;
+}
+
+.DrawerSideContainer > hr {
+  box-shadow: 2px 4px 4px 0px #00000040 inset;
+  border-radius: 38px;
+  padding: 0px;
+  width: 9px;
+  height: 80vh;
+}
+.DrawerSideContainer > div {
+  height: 90vh;
+}
+
+.logo {
+  height: fit-content;
+  width: 50px;
+}
+.DrawerSides {
+  display: grid;
+  grid-template-rows: 2fr 2fr 2fr;
+}
+
+.DrawerSideIcons {
+  display: flex;
+  width: 60px;
+  gap: 50px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.DrawerSideIcons > img {
+  cursor: pointer;
+  width: 40px;
+  height: fit-content;
+}
+
+@media screen and (max-width: 1100px) {
+  .DrawerSideContainer {
+    display: none;
+  }
+}

@@ -1,0 +1,93 @@
+.FriendsListContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20vw;
+  overflow: hidden;
+}
+.FriendsListContainer > p {
+  align-self: flex-start;
+  margin-top: 5px;
+  margin-bottom: 25px;
+  font-family: Gilroy;
+  font-size: 35px;
+  font-weight: 800;
+  line-height: 43px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.FriendsList {
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  transform: rotate(30deg);
+  padding: 10px;
+  grid-template-rows: auto auto auto auto;
+  transition: all 200ms;
+}
+
+.FriendsList > div {
+  gap: 2px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  padding: 0px;
+  width: fit-content;
+}
+
+.FriendsList > div > .FriendItem:nth-of-type(1),
+.FriendsList > div:nth-of-type(1) > .FriendItem {
+  align-items: end;
+  background: #0000 !important;
+  height: 20px;
+  width: 20px;
+}
+
+.FriendsList > div:nth-last-of-type(1) > .FriendItem,
+.FriendsList > div > :nth-last-of-type(1) {
+  background: #0000 !important;
+  align-items: flex-start;
+  height: 20px;
+  width: 20px;
+}
+.NoHover {
+  margin: auto;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  transform: rotate(-30deg);
+  box-sizing: border-box;
+  transition: none;
+}
+.FriendItem {
+  margin: auto;
+  box-sizing: border-box;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  transform: rotate(-30deg);
+  box-sizing: border-box;
+  transition: all 200ms;
+}
+.FriendItem:hover {
+  height: 60px !important;
+  width: 60px !important;
+  transition: all 200ms;
+}
+
+.FriendsList > div > span:nth-of-type(1),
+.FriendsList > div:nth-of-type(1) > .FriendItem,
+.FriendsList > div > span:nth-last-child(1),
+.FriendsList > div:nth-last-child(1) > .FriendItem,
+.NoHover :hover {
+  height: 0px !important;
+  width: 0px !important;
+}
+
+@media screen and (max-width: 800px) {
+  .FriendsListContainer {
+    width: 90vw;
+  }
+}

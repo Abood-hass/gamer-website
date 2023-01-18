@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.77000544.css",
+    "main.js": "/static/js/main.c8400942.js",
+    "static/media/gamerImage.jfif": "/static/media/gamerImage.1c293ef10025d7bf555f.jfif",
+    "static/media/packmanLoose.gif": "/static/media/packmanLoose.73231f1fb22dc089123a.gif",
+    "static/media/Gayathri-Bold.ttf": "/static/media/Gayathri-Bold.264ad1262b59197803d0.ttf",
+    "static/media/gameOfYear.png": "/static/media/gameOfYear.b8c337accda002be2e2c.png",
+    "static/media/oldController.png": "/static/media/oldController.6a51eedbe8308b2b7970.png",
+    "static/media/Gilroy-ExtraBold.otf": "/static/media/Gilroy-ExtraBold.0094146a0505298ed06a.otf",
+    "static/media/Gilroy-Light.otf": "/static/media/Gilroy-Light.cc7ab55d27205bd64001.otf",
+    "static/media/Righteous-Regular.ttf": "/static/media/Righteous-Regular.fd0110471f2228c1808a.ttf",
+    "static/media/ARCADECLASSIC.TTF": "/static/media/ARCADECLASSIC.8f36b955d042951fd3af.TTF",
+    "static/media/Settings.svg": "/static/media/Settings.ae2eff8ac845bfb4f79dc5364d149aed.svg",
+    "static/media/logo.svg": "/static/media/logo.7dbe4f57776c586f9e4a28ef964cb6e0.svg",
+    "static/media/Sun-one.svg": "/static/media/Sun-one.bfe2dfddae362831475bd806997f3b6f.svg",
+    "static/media/Puzzle.svg": "/static/media/Puzzle.367d19e9a7f3167411ee117a6debb046.svg",
+    "static/media/like.svg": "/static/media/like.ae41b02e098858fae2ed05e87eb983f2.svg",
+    "static/media/Moon.svg": "/static/media/Moon.bf40a473db5a3d5d0e7f01f5d21d104e.svg",
+    "index.html": "/index.html",
+    "main.77000544.css.map": "/static/css/main.77000544.css.map",
+    "main.c8400942.js.map": "/static/js/main.c8400942.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.77000544.css",
+    "static/js/main.c8400942.js"
+  ]
+}

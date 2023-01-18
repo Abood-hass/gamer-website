@@ -1,0 +1,45 @@
+.ProfileContainer {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 50px;
+  margin: auto;
+}
+
+.ProfileContainer > img {
+  height: 450px;
+  object-fit: contain;
+  border-radius: 20px;
+}
+.ProfileContainer > div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.UserInfo {
+  font-size: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 70vw;
+  height: fit-content;
+}
+.UserInfo > p,
+.UserInfo > p > span::before {
+  font-weight: 500;
+  content: ": ";
+}
+
+.UserInfo > p > span {
+  font-weight: 300;
+}
+
+@media screen and (max-width: 800px) {
+  .ProfileContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 120vh;
+    text-align: left;
+  }
+}

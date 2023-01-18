@@ -1,0 +1,43 @@
+.ErrorPage {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  height: 100vh;
+  width: 100vw;
+  background-color: #020618;
+}
+
+.ErrorPage > h3 {
+  font-family: arcade-classic;
+  margin: auto;
+  font-size: 180px;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 200px;
+  font-size: 120px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-image: url("../../assest/images/packmanLoose.gif");
+  background-position: 5% 50%;
+}
+
+.ErrorPage > p {
+  cursor: pointer;
+  word-spacing: 10px;
+  font-size: 30px;
+  background-color: #eb701d;
+  border: 10px groove gray;
+  padding: 10px;
+  border-spacing: 115px;
+  font-family: arcade-classic;
+  margin: auto;
+  color: #fbfbfb;
+}
+
+.ErrorPage > p:hover {
+  background-color: purple;
+}
