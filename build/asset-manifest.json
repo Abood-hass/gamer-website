@@ -1,28 +1,40 @@
 {
   "files": {
-    "main.css": "/static/css/main.77000544.css",
-    "main.js": "/static/js/main.c8400942.js",
+    "main.css": "/static/css/main.5fc5a3bb.css",
+    "main.js": "/static/js/main.3ecdc46e.js",
+    "static/media/GoW.png": "/static/media/GoW.0c07b39f353e8156666d.png",
+    "static/media/superman.png": "/static/media/superman.338b74748297c778fab8.png",
+    "static/media/superManbackground.jfif": "/static/media/superManbackground.7185c7dd0d8e1bb753a1.jfif",
     "static/media/gamerImage.jfif": "/static/media/gamerImage.1c293ef10025d7bf555f.jfif",
+    "static/media/kratos.png": "/static/media/kratos.914720c939af3c09c647.png",
     "static/media/packmanLoose.gif": "/static/media/packmanLoose.73231f1fb22dc089123a.gif",
+    "static/media/dyinglight2.jfif": "/static/media/dyinglight2.d1f28988d6e767e6c06e.jfif",
+    "static/media/spiderMan.png": "/static/media/spiderMan.57fba2a792e6a15b9fd9.png",
     "static/media/Gayathri-Bold.ttf": "/static/media/Gayathri-Bold.264ad1262b59197803d0.ttf",
+    "static/media/SpiderManIcon.png": "/static/media/SpiderManIcon.498c6870f813da63589f.png",
     "static/media/gameOfYear.png": "/static/media/gameOfYear.b8c337accda002be2e2c.png",
     "static/media/oldController.png": "/static/media/oldController.6a51eedbe8308b2b7970.png",
+    "static/media/GoWIcon.png": "/static/media/GoWIcon.d595525a153fadbe21b4.png",
+    "static/media/SpiderManbackground.jfif": "/static/media/SpiderManbackground.8cd98785987e616b8616.jfif",
     "static/media/Gilroy-ExtraBold.otf": "/static/media/Gilroy-ExtraBold.0094146a0505298ed06a.otf",
     "static/media/Gilroy-Light.otf": "/static/media/Gilroy-Light.cc7ab55d27205bd64001.otf",
     "static/media/Righteous-Regular.ttf": "/static/media/Righteous-Regular.fd0110471f2228c1808a.ttf",
     "static/media/ARCADECLASSIC.TTF": "/static/media/ARCADECLASSIC.8f36b955d042951fd3af.TTF",
-    "static/media/Settings.svg": "/static/media/Settings.ae2eff8ac845bfb4f79dc5364d149aed.svg",
-    "static/media/logo.svg": "/static/media/logo.7dbe4f57776c586f9e4a28ef964cb6e0.svg",
-    "static/media/Sun-one.svg": "/static/media/Sun-one.bfe2dfddae362831475bd806997f3b6f.svg",
-    "static/media/Puzzle.svg": "/static/media/Puzzle.367d19e9a7f3167411ee117a6debb046.svg",
-    "static/media/like.svg": "/static/media/like.ae41b02e098858fae2ed05e87eb983f2.svg",
-    "static/media/Moon.svg": "/static/media/Moon.bf40a473db5a3d5d0e7f01f5d21d104e.svg",
+    "static/media/crush.jfif": "/static/media/crush.cff39b43eaa6d8c49fce.jfif",
+    "static/media/godofwar.jfif": "/static/media/godofwar.d2f475e30809f20f845a.jfif",
+    "static/media/harrypoter.jfif": "/static/media/harrypoter.d9e913f9a4a01763286e.jfif",
+    "static/media/Settings.svg": "/static/media/Settings.51442bb07f0e26984543836d477dce61.svg",
+    "static/media/logo.svg": "/static/media/logo.b4c5593bbc99938bbc47afc6e36c902f.svg",
+    "static/media/Sun-one.svg": "/static/media/Sun-one.ee5048b7b16b76d55c8e7e67d9787726.svg",
+    "static/media/Puzzle.svg": "/static/media/Puzzle.caa232f6512338d8e4d69d0d4657b39b.svg",
+    "static/media/like.svg": "/static/media/like.75cbf83ccfdfd6c791ea9f9c398c96d4.svg",
+    "static/media/Moon.svg": "/static/media/Moon.cd396f7c357a6e3953ba6c0e6b698db3.svg",
     "index.html": "/index.html",
-    "main.77000544.css.map": "/static/css/main.77000544.css.map",
-    "main.c8400942.js.map": "/static/js/main.c8400942.js.map"
+    "main.5fc5a3bb.css.map": "/static/css/main.5fc5a3bb.css.map",
+    "main.3ecdc46e.js.map": "/static/js/main.3ecdc46e.js.map"
   },
   "entrypoints": [
-    "static/css/main.77000544.css",
-    "static/js/main.c8400942.js"
+    "static/css/main.5fc5a3bb.css",
+    "static/js/main.3ecdc46e.js"
   ]
 }
